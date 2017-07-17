@@ -7,21 +7,19 @@ mkdir ..\bin\darwin64
 
 SET GOOS=windows
 SET GOARCH=amd64
-go build -o ..\bin\win64\gost.exe ../src/main.go
+go build -o ..\bin\win64\gost.exe main.go
 echo "Built application for Windows/amd64"
-copy ..\src\config.yaml ..\bin\win64\config.yaml
-xcopy ..\src\client\*.* ..\bin\win64\client\ /S
+copy ..\config.yaml ..\bin\win64\config.yaml
 
 SET GOOS=linux
 SET GOARCH=amd64
-go build -o ..\bin\linux64\gost ../src/main.go
+go build -o ..\bin\linux64\gost main.go
 echo "Built application for Linux/amd64"
-copy ..\src\config.yaml ..\bin\linux64\config.yaml
-xcopy ..\src\client\*.* ..\bin\linux64\client\ /S
+copy ..\config.yaml ..\bin\linux64\config.yaml
 
 SET GOOS=darwin
 SET GOARCH=amd64
-go build -o ..\bin\darwin64\gost ../src/main.go
+go build -o ..\bin\darwin64\gost main.go
 echo "Built application for Darwin/amd64"
-copy ..\src\config.yaml ..\bin\darwin64\config.yaml
-xcopy ..\src\client\*.* ..\bin\darwin64\client\ /S
+copy ..\config.yaml ..\bin\darwin64\config.yaml
+pause
